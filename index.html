@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pinna – Moda Juvenil Femenina</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <img src="Pinna.jpeg" alt="Pinna Logo" class="nav-logo" />
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotras">Nosotras</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Nueva colección 2025</p>
+      <h1 class="hero-title">Viste lo que<br/><em>eres</em></h1>
+      <p class="hero-sub">Ropa juvenil femenina pensada para chicas que marcan tendencia.</p>
+      <a href="#catalogo" class="btn-primary">Ver catálogo</a>
+    </div>
+    <div class="hero-deco">
+      <img src="Pinna.jpeg" alt="Pinna" class="hero-logo-deco" />
+    </div>
+  </section>
+
+  <!-- ===== NOSOTRAS ===== -->
+  <section class="about" id="nosotras">
+    <div class="about-inner">
+      <div class="about-text">
+        <span class="section-tag">Nuestra historia</span>
+        <h2>Más que ropa,<br/>una <em>actitud</em></h2>
+        <p>Pinna nació para la chica que no sigue tendencias, las crea. Somos una marca de moda juvenil femenina que combina estilo, comodidad y personalidad en cada prenda.</p>
+        <p>Desde básicos que duran toda la semana hasta looks de noche que roban miradas, en Pinna encontrás piezas diseñadas para chicas entre 15 y 25 años que saben exactamente lo que quieren.</p>
+        <div class="about-stats">
+          <div class="stat"><strong>+200</strong><span>Prendas</span></div>
+          <div class="stat"><strong>100%</strong><span>Calidad</span></div>
+          <div class="stat"><strong>♡</strong><span>Con amor</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card card-1"></div>
+        <div class="about-card card-2"></div>
+        <img src="Pinna.jpeg" alt="Pinna" class="about-logo-float"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATALOGO ===== -->
+  <section class="catalog" id="catalogo">
+    <div class="catalog-header">
+      <span class="section-tag">Lo más nuevo</span>
+      <h2>Catálogo <em>Pinna</em></h2>
+      <p>Haz clic en una prenda para verla en detalle y pedirla.</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="tops">Tops</button>
+      <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+      <button class="filter-btn" data-filter="vestidos">Vestidos</button>
+      <button class="filter-btn" data-filter="conjuntos">Conjuntos</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+
+      <!-- Producto 1 -->
+      <div class="product-card" data-category="tops"
+           data-name="Top Lino Nude"
+           data-price="$89.000"
+           data-desc="Top de lino en tono nude con escote cuadrado y tiritas ajustables. Fresco y versátil para cualquier ocasión."
+           data-sizes="XS,S,M,L"
+           data-color="#D4B896">
+        <div class="product-img" style="background:linear-gradient(135deg,#e8d5c0,#c9a882)">
+          <div class="product-placeholder"><i class="fa-solid fa-shirt"></i></div>
+          <span class="product-badge">Nuevo</span>
+        </div>
+        <div class="product-info">
+          <h3>Top Lino Nude</h3>
+          <p class="product-cat">Tops</p>
+          <div class="product-footer">
+            <span class="price">$89.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="product-card" data-category="vestidos"
+           data-name="Vestido Café Midi"
+           data-price="$145.000"
+           data-desc="Vestido midi en tono café con cintura marcada y falda con vuelo. Perfecto para una salida especial o reunión."
+           data-sizes="S,M,L,XL"
+           data-color="#7B4F2E">
+        <div class="product-img" style="background:linear-gradient(135deg,#c89668,#7b4f2e)">
+          <div class="product-placeholder"><i class="fa-solid fa-person-dress"></i></div>
+          <span class="product-badge new">Favorito</span>
+        </div>
+        <div class="product-info">
+          <h3>Vestido Café Midi</h3>
+          <p class="product-cat">Vestidos</p>
+          <div class="product-footer">
+            <span class="price">$145.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="product-card" data-category="conjuntos"
+           data-name="Conjunto Terracota"
+           data-price="$178.000"
+           data-desc="Conjunto de top y pantalón wide leg en terracota. Tela suave y fresca. ¡Ideal para verano!"
+           data-sizes="XS,S,M,L"
+           data-color="#C4622D">
+        <div class="product-img" style="background:linear-gradient(135deg,#e07a45,#c4622d)">
+          <div class="product-placeholder"><i class="fa-solid fa-clothes-hanger"></i></div>
+        </div>
+        <div class="product-info">
+          <h3>Conjunto Terracota</h3>
+          <p class="product-cat">Conjuntos</p>
+          <div class="product-footer">
+            <span class="price">$178.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="product-card" data-category="bottoms"
+           data-name="Falda Crochet Beige"
+           data-price="$95.000"
+           data-desc="Falda midi en crochet color beige. Textura artesanal, elástico en la cintura y largo que define cualquier look."
+           data-sizes="S,M,L"
+           data-color="#D6C5A8">
+        <div class="product-img" style="background:linear-gradient(135deg,#e8dcc8,#c4a97a)">
+          <div class="product-placeholder"><i class="fa-solid fa-shirt"></i></div>
+          <span class="product-badge">Tendencia</span>
+        </div>
+        <div class="product-info">
+          <h3>Falda Crochet Beige</h3>
+          <p class="product-cat">Bottoms</p>
+          <div class="product-footer">
+            <span class="price">$95.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="product-card" data-category="tops"
+           data-name="Blusa Off-Shoulder Camel"
+           data-price="$79.000"
+           data-desc="Blusa off-shoulder en camel con manga larga y detalle de frunce. Romántica y sofisticada."
+           data-sizes="XS,S,M,L,XL"
+           data-color="#C19A6B">
+        <div class="product-img" style="background:linear-gradient(135deg,#d4aa78,#a07040)">
+          <div class="product-placeholder"><i class="fa-solid fa-shirt"></i></div>
+        </div>
+        <div class="product-info">
+          <h3>Blusa Off-Shoulder Camel</h3>
+          <p class="product-cat">Tops</p>
+          <div class="product-footer">
+            <span class="price">$79.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="product-card" data-category="vestidos"
+           data-name="Mini Vestido Chocolate"
+           data-price="$128.000"
+           data-desc="Mini vestido en tono chocolate oscuro con escote halter y espalda descubierta. Perfecto para una noche especial."
+           data-sizes="XS,S,M,L"
+           data-color="#4A2C1A">
+        <div class="product-img" style="background:linear-gradient(135deg,#8B5E3C,#4a2c1a)">
+          <div class="product-placeholder"><i class="fa-solid fa-person-dress"></i></div>
+          <span class="product-badge">Hot</span>
+        </div>
+        <div class="product-info">
+          <h3>Mini Vestido Chocolate</h3>
+          <p class="product-cat">Vestidos</p>
+          <div class="product-footer">
+            <span class="price">$128.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="product-card" data-category="bottoms"
+           data-name="Pantalón Wide Toffee"
+           data-price="$115.000"
+           data-desc="Pantalón wide leg de tiro alto en tono toffee. Corte relajado con caída perfecta, tela fluida de alta calidad."
+           data-sizes="S,M,L,XL"
+           data-color="#B8864E">
+        <div class="product-img" style="background:linear-gradient(135deg,#c8964e,#8b6030)">
+          <div class="product-placeholder"><i class="fa-solid fa-shirt"></i></div>
+        </div>
+        <div class="product-info">
+          <h3>Pantalón Wide Toffee</h3>
+          <p class="product-cat">Bottoms</p>
+          <div class="product-footer">
+            <span class="price">$115.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 8 -->
+      <div class="product-card" data-category="conjuntos"
+           data-name="Set Lino Caramel"
+           data-price="$195.000"
+           data-desc="Set de camisa y bermuda en lino caramel. Fresco, cómodo y ultra elegante para días de calor."
+           data-sizes="XS,S,M,L"
+           data-color="#D4966A">
+        <div class="product-img" style="background:linear-gradient(135deg,#e0b080,#b07040)">
+          <div class="product-placeholder"><i class="fa-solid fa-clothes-hanger"></i></div>
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <h3>Set Lino Caramel</h3>
+          <p class="product-cat">Conjuntos</p>
+          <div class="product-footer">
+            <span class="price">$195.000</span>
+            <button class="btn-view" onclick="openModal(this.closest('.product-card'))">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalBtn()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-img" id="modalImg"></div>
+      <div class="modal-body">
+        <span class="modal-cat" id="modalCat"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="size-selector">
+          <p class="size-label">Elige tu talla:</p>
+          <div class="sizes" id="modalSizes"></div>
+        </div>
+        <a class="btn-order" id="btnOrder" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+        </a>
+        <a class="btn-order btn-ig" id="btnIG" href="https://www.instagram.com/pinna.store" target="_blank">
+          <i class="fa-brands fa-instagram"></i> Ver en Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <span class="section-tag light">Encuéntranos</span>
+      <h2>Hablemos,<br/><em>te esperamos</em></h2>
+      <p>¿Dudas sobre una prenda, tallas o envíos? Escríbenos directamente.</p>
+      <div class="contact-cards">
+        <a href="https://wa.me/573001234567" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <strong>WhatsApp</strong>
+            <span>+57 300 123 4567</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/pinna.store" target="_blank" class="contact-card">
+          <div class="contact-icon ig"><i class="fa-brands fa-instagram"></i></div>
+          <div>
+            <strong>Instagram</strong>
+            <span>@pinna.store</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <img src="Pinna.jpeg" alt="Pinna" class="footer-logo"/>
+    <p>© 2025 Pinna. Todos los derechos reservados.</p>
+    <p class="footer-sub">Moda juvenil femenina · Hecha con amor ♡</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
