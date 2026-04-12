@@ -85,8 +85,8 @@ function openModal(card) {
 function updateOrderLink(name, price, size) {
   const sizeText = size ? `Talla: ${size}` : 'Sin talla seleccionada aún';
   const msg = encodeURIComponent(`Hola Pinna! Me interesa:\n👗 ${name}\n💰 ${price}\n📏 ${sizeText}\n\n¿Tienen disponibilidad?`);
-  const phone = '573001234567'; // ← Cambia por tu número real
-  document.getElementById('btnOrder').href = `https://wa.me/${phone}?text=${msg}`;
+  const phone = '573015086774'; // ← Cambia por tu número real
+  document.getElementById('btnOrder').href = `https://wa.me/3015086774?text=${msg}`;
 }
 
 function closeModal(e) {
