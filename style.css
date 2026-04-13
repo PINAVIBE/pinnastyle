@@ -479,3 +479,34 @@ img { display: block; max-width: 100%; }
   display: block !important;
   padding: 18px 20px 20px;
 }
+/* ===== MODAL MOBILE ===== */
+@media (max-width: 600px) {
+  .modal {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 18px;
+  }
+
+  .modal-img {
+    min-height: 240px;
+    max-height: 260px;
+  }
+
+  .modal-body {
+    padding: 24px 20px;
+    overflow-y: visible;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal {
+    border-radius: 22px 22px 0 0;
+    max-height: 92vh;
+    width: 100%;
+    max-width: 100%;
+  }
+}
