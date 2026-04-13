@@ -82,6 +82,29 @@ if (cardImg) {
     sizesContainer.appendChild(chip);
   });
 
+  // Colores
+const colorsData = card.dataset.colors;
+let colorsHTML = '';
+if (colorsData) {
+  const colorsArray = colorsData.split(',');
+  colorsHTML = `
+    <div class="color-selector">
+      <p class="size-label">Colores disponibles:</p>
+      <div class="colors">
+        ${colorsArray.map(c => `
+          <button class="color-chip" style="background:${c.trim()}" 
+            title="${c.trim()}"
+            onclick="selectColor(this, '${c.trim()}')">
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// Insertarlo antes del botón de WhatsApp
+document.getElementById('btnOrder').insertAdjacentHTML('beforebegin', colorsHTML);
+
   // WhatsApp link
   updateOrderLink(name, price, '');
 
@@ -89,11 +112,12 @@ if (cardImg) {
   document.body.style.overflow = 'hidden';
 }
 
-function updateOrderLink(name, price, size) {
-  const sizeText = size ? `Talla: ${size}` : 'Sin talla seleccionada aún';
-  const msg = encodeURIComponent(`Hola Pinna! Me interesa:\n🤎 ${name}\n🤎 ${price}\n🤎 ${sizeText}\n\n¿Tienen disponibilidad?`);
-  const phone = '573015086774'; // ← Cambia por tu número real
-  document.getElementById('btnOrder').href = `https://wa.me/3015086774?text=${msg}`;
+function updateOrderLink(name, price, size, color = '') {
+  const sizeText = size ? `Talla: ${size}` : 'Sin talla seleccionada';
+  const colorText = color ? `\nColor: ${color}` : '';
+  const msg = encodeURIComponent(`Hola Pinna! Me interesa:\n🤎 ${name}\n🤎 ${price}\n🤎 ${sizeText}${colorText}\n\n¿Tienen disponibilidad?`);
+  const phone = '573015086774';
+  document.getElementById('btnOrder').href = `https://wa.me/${phone}?text=${msg}`;
 }
 
 function closeModal(e) {
@@ -144,3 +168,14 @@ productCards.forEach((card, i) => {
   card.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s, box-shadow 0.3s ease`;
   observer.observe(card);
 });
+
+function selectColor(btn, color) {
+  document.querySelectorAll('.color-chip').forEach(c => c.classList.remove('selected'));
+  btn.classList.add('selected');
+  updateOrderLink(
+    document.getElementById('modalTitle').textContent,
+    document.getElementById('modalPrice').textContent,
+    selectedSize,
+    color
+  );
+}

@@ -536,3 +536,26 @@ img { display: block; max-width: 100%; }
     justify-content: center;
   }
 }
+
+.color-selector { margin-top: 4px; }
+
+.colors { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+.color-chip {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.color-chip:hover {
+  transform: scale(1.15);
+}
+
+.color-chip.selected {
+  border-color: var(--brown-dark);
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(74,44,26,0.2);
+}
