@@ -471,10 +471,8 @@ img { display: block; max-width: 100%; }
 .product-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  padding: 10px;
-  background: #f7f1ea;
 }
 
 .product-info {
