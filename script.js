@@ -55,8 +55,15 @@ function openModal(card) {
   document.getElementById('modalCat').textContent   = cat.charAt(0).toUpperCase() + cat.slice(1);
 
   const modalImg = document.getElementById('modalImg');
+const cardImg = card.querySelector('.product-img img');
+
+if (cardImg) {
+  modalImg.style.background = 'none';
+  modalImg.innerHTML = `<img src="${cardImg.src}" alt="${cardImg.alt}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
+} else {
   modalImg.style.background = bg;
-  modalImg.innerHTML = `<i class="fa-solid ${cat === 'vestidos' ? 'fa-person-dress' : cat === 'conjuntos' ? 'fa-clothes-hanger' : 'fa-shirt'}"></i>`;
+  modalImg.innerHTML = `<i class="fa-solid fa-shirt"></i>`;
+}
 
   // Sizes
   selectedSize = '';
