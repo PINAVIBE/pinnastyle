@@ -510,3 +510,22 @@ img { display: block; max-width: 100%; }
     max-width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .about-inner {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-visual {
+    display: none;
+  }
+
+  .about-text p {
+    max-width: 100%;
+  }
+
+  .about-stats {
+    justify-content: center;
+  }
+}
