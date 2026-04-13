@@ -489,8 +489,14 @@ img { display: block; max-width: 100%; }
   }
 
   .modal-img {
-    min-height: 240px;
-    max-height: 260px;
+    min-height: 320px;
+    max-height: 380px;
+  }
+
+  .modal-img img {
+    object-fit: contain !important;
+    background: #f7f1ea;
+    padding: 8px;
   }
 
   .modal-body {
