@@ -83,11 +83,41 @@ const productos = [
     badge: "Nuevo"
   },
   {
+    nombre: "Body maya manga larga",
+    categoria: "bodys",
+    precio: "$45.000",
+    descripcion: "",
+    tallas: ["Talla única "],
+    colores: ["#FFFFFF"],
+    imagen: "img/body maya manga larga .jpeg",
+    badge: "Nuevo"
+  },
+  {
+    nombre: "Body manga larga",
+    categoria: "bodys",
+    precio: "$33.000",
+    descripcion: "",
+    tallas: ["Talla única "],
+    colores: ["#000000, #FFFFFF"],
+    imagen: "img/Body manga larga.jpeg",
+    badge: ""
+  },
+  {
+    nombre: "Body julieta",
+    categoria: "bodys",
+    precio: "$35.000",
+    descripcion: "",
+    tallas: ["Talla única"],
+    colores: ["#e3cba5"],
+    imagen: "img/body julieta.jpeg",
+    badge: "Nuevo"
+  },
+  {
     nombre: "",
     categoria: "",
     precio: "",
     descripcion: "",
-    tallas: [""],
+    tallas: ["Talla única"],
     colores: [""],
     imagen: "",
     badge: ""
@@ -97,7 +127,7 @@ const productos = [
     categoria: "",
     precio: "",
     descripcion: "",
-    tallas: [""],
+    tallas: ["Talla única"],
     colores: [""],
     imagen: "",
     badge: ""
@@ -107,37 +137,7 @@ const productos = [
     categoria: "",
     precio: "",
     descripcion: "",
-    tallas: [""],
-    colores: [""],
-    imagen: "",
-    badge: ""
-  },
-  {
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-    tallas: [""],
-    colores: [""],
-    imagen: "",
-    badge: ""
-  },
-  {
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-    tallas: [""],
-    colores: [""],
-    imagen: "",
-    badge: ""
-  },
-  {
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-    tallas: [""],
+    tallas: ["Talla única"],
     colores: [""],
     imagen: "",
     badge: ""
@@ -321,7 +321,8 @@ const nombreColores = {
   "#C19A6B": "Camel",
   "#D4B896": "Nude",
   "#FFFFFF": "Blanco",
-  "#4f030c" : "Vino tinto profundo"
+  "#4f030c": "Vino tinto profundo",
+  "#e3cba5": "Camel",
   // ➕ agrega más si usas otros colores
 };
 
