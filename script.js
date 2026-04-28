@@ -81,8 +81,67 @@ const productos = [
     colores: ["#000000, #4f030c"],
     imagen: "img/body suzeh.jpeg",
     badge: "Nuevo"
-
-  }
+  },
+  {
+    nombre: "",
+    categoria: "",
+    precio: "",
+    descripcion: "",
+    tallas: [""],
+    colores: [""],
+    imagen: "",
+    badge: ""
+  },
+  {
+    nombre: "",
+    categoria: "",
+    precio: "",
+    descripcion: "",
+    tallas: [""],
+    colores: [""],
+    imagen: "",
+    badge: ""
+  },
+  {
+    nombre: "",
+    categoria: "",
+    precio: "",
+    descripcion: "",
+    tallas: [""],
+    colores: [""],
+    imagen: "",
+    badge: ""
+  },
+  {
+    nombre: "",
+    categoria: "",
+    precio: "",
+    descripcion: "",
+    tallas: [""],
+    colores: [""],
+    imagen: "",
+    badge: ""
+  },
+  {
+    nombre: "",
+    categoria: "",
+    precio: "",
+    descripcion: "",
+    tallas: [""],
+    colores: [""],
+    imagen: "",
+    badge: ""
+  },
+  {
+    nombre: "",
+    categoria: "",
+    precio: "",
+    descripcion: "",
+    tallas: [""],
+    colores: [""],
+    imagen: "",
+    badge: ""
+  },
 ]; 
 // ===================================================
 // NO toques nada debajo de esta línea
@@ -248,10 +307,29 @@ function selectColor(btn, color, name, price) {
   updateOrderLink(name, price, selectedSize, selectedColor);
 }
 
+const nombreColores = {
+  "#000000": "Negro",
+  "#FFFFFF": "Blanco",
+  "#808080": "Gris",
+  "#722F37": "Vino tinto",
+  "#800020": "Borgoña",
+  "#1B2A4A": "Azul marino",
+  "#4A5E3A": "Verde militar",
+  "#87CEEB": "Azul cielo",
+  "#AED6F1": "Azul bebé",
+  "#7D9B76": "Verde salvia",
+  "#C19A6B": "Camel",
+  "#D4B896": "Nude",
+  "#FFFFFF": "Blanco",
+  "#4f030c" : "Vino tinto profundo"
+  // ➕ agrega más si usas otros colores
+};
+
 function updateOrderLink(name, price, size, color) {
-  const sizeText  = size  ? `Talla: ${size}`   : 'Sin talla seleccionada';
-  const colorText = color ? `\nColor: ${color}` : '';
-  const msg = encodeURIComponent(`Hola Pinna! Me interesa:\n👗 ${name}\n💰 ${price}\n📏 ${sizeText}${colorText}\n\n¿Tienen disponibilidad?`);
+  const sizeText  = size  ? `Talla: ${size}` : 'Sin talla seleccionada';
+  const colorNombre = color ? (nombreColores[color] || color) : '';
+  const colorText = colorNombre ? `\nColor: ${colorNombre}` : '';
+  const msg = encodeURIComponent(`Hola Pinna! Me interesa:\n🤎 ${name}\n🤎 ${price}\n🤎 ${sizeText}${colorText}\n\n¿Tienen disponibilidad?`);
   const phone = '573015086774';
   document.getElementById('btnOrder').href = `https://wa.me/${phone}?text=${msg}`;
 }
