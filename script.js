@@ -10,6 +10,7 @@ const productos = [
     tallas: ["Talla única"],
     colores: ["#808080", "#000000", "#1B2A4A"],
     imagen: "img/Croptop dalila.jpeg",
+    imagenes: "",
     badge: "Nuevo"
   },
   {
@@ -20,6 +21,7 @@ const productos = [
     tallas: ["Talla única"],
     colores: ["#000000", "#1B2A4A", "#4A5E3A", "#87CEEB", "#FFFFFF"],
     imagen: "img/Blusa reservada.jpeg",
+    imagenes: "",
     badge: "Nuevo"
   },
   {
@@ -28,8 +30,9 @@ const productos = [
     precio: "$45.000",
     descripcion: "Un body que está a la altura de una chica como tú.",
     tallas: ["Talla única"],
-    colores: [],
+    colores: ["#800020"],
     imagen: "img/Body.jpeg",
+    imagenes: "",
     badge: "Nuevo"
   },
   {
@@ -38,8 +41,9 @@ const productos = [
     precio: "$25.000",
     descripcion: "Croptop playero, preciso para un día que quieras salir de tu zona de confort.",
     tallas: ["Talla única"],
-    colores: [],
+    colores: ["#80091B"],
     imagen: "img/Croptop playero.jpeg",
+    imagenes: "",
     badge: "Nuevo"
   },
   {
@@ -50,7 +54,8 @@ const productos = [
     tallas: ["Talla única"],
     colores: [],
     imagen: "img/Blusa ema.jpeg",
-    badge: "Hot"
+    imagenes: "",
+    badge: "Nuevo"
   },
   {
     nombre: "Body strapless",
@@ -58,8 +63,9 @@ const productos = [
     precio: "$33.000",
     descripcion: "Body strapless, un body sencillo pero de alta calidad.",
     tallas: ["Talla única"],
-    colores: [],
+    colores: ["#311d08, #000000, #FFFFFF, #80091B"],
     imagen: "img/Body strapless.jpeg",
+    imagenes: ["img/Body strapless.jpeg", "img/Body strapless negro.jpeg", "img/Body strapless blanco.jpeg", "img/Body strapless vinotinto.jpeg"],
     badge: "Nuevo"
   },
   {
@@ -68,8 +74,9 @@ const productos = [
     precio: "$25.000",
     descripcion: "Blusa top paris, una pieza única para cualquier ocasión.",
     tallas: ["Talla única"],
-    colores: ["#FFFFFF"],
+    colores: ["#FFFFFF, #000000"],
     imagen: "img/Blusa top paris.jpeg",
+    imagenes: ["img/Blusa top paris.jpeg", "img/Blusa top paris negra.jpeg"],
     badge: "Nuevo"
   },
   {
@@ -80,6 +87,7 @@ const productos = [
     tallas: ["Talla única"],
     colores: ["#000000, #4f030c"],
     imagen: "img/body suzeh.jpeg",
+    imagenes: "",
     badge: "Nuevo"
   },
   {
@@ -88,8 +96,9 @@ const productos = [
     precio: "$45.000",
     descripcion: "",
     tallas: ["Talla única "],
-    colores: ["#FFFFFF"],
+    colores: ["#FFFFFF, #000000"],
     imagen: "img/body maya manga larga .jpeg",
+    imagenes: ["img/body maya manga larga .jpeg", "img/body maya manga larga negro.jpeg"],
     badge: "Nuevo"
   },
   {
@@ -100,7 +109,8 @@ const productos = [
     tallas: ["Talla única "],
     colores: ["#000000, #FFFFFF"],
     imagen: "img/Body manga larga.jpeg",
-    badge: ""
+    imagenes: ["img/Body manga larga.jpeg", "img/Body manga larga blanco.jpeg"],
+    badge: "Nuevo"
   },
   {
     nombre: "Body julieta",
@@ -110,38 +120,10 @@ const productos = [
     tallas: ["Talla única"],
     colores: ["#e3cba5"],
     imagen: "img/body julieta.jpeg",
+    imagenes: "",
     badge: "Nuevo"
   },
-  {
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-    tallas: ["Talla única"],
-    colores: [""],
-    imagen: "",
-    badge: ""
-  },
-  {
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-    tallas: ["Talla única"],
-    colores: [""],
-    imagen: "",
-    badge: ""
-  },
-  {
-    nombre: "",
-    categoria: "",
-    precio: "",
-    descripcion: "",
-    tallas: ["Talla única"],
-    colores: [""],
-    imagen: "",
-    badge: ""
-  },
+
 ]; 
 // ===================================================
 // NO toques nada debajo de esta línea
@@ -171,6 +153,7 @@ function renderProductos() {
     card.dataset.sizes = p.tallas.join(',');
     card.dataset.colors = p.colores.join(',');
     card.dataset.imagen = p.imagen;
+    card.dataset.imagenes = Array.isArray(p.imagenes) && p.imagenes.length > 0 ? p.imagenes.join('|') : p.imagen;
 
     card.innerHTML = `
       <div class="product-img">
@@ -245,15 +228,31 @@ function openModal(card) {
   document.getElementById('modalDesc').textContent  = desc;
   document.getElementById('modalCat').textContent   = cat.charAt(0).toUpperCase() + cat.slice(1);
 
-  // Imagen modal
-  const modalImg = document.getElementById('modalImg');
-  if (imagen) {
-    modalImg.style.background = 'none';
-    modalImg.innerHTML = `<img src="${imagen}" alt="${name}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
-  } else {
-    modalImg.style.background = 'linear-gradient(135deg,#e8d5c0,#c9a882)';
-    modalImg.innerHTML = `<i class="fa-solid fa-shirt"></i>`;
-  }
+ // Imagen modal con carrusel
+const modalImg = document.getElementById('modalImg');
+const imagenes = card.dataset.imagenes ? card.dataset.imagenes.split('|') : [card.dataset.imagen];
+let currentImg = 0;
+
+function renderCarrusel() {
+  modalImg.innerHTML = `
+    <div style="position:relative;width:100%;height:100%;">
+      <img src="${imagenes[currentImg]}" alt="${name}" 
+        style="width:100%;height:100%;object-fit:cover;display:block;">
+      ${imagenes.length > 1 ? `
+        <button onclick="prevImg()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.8);border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:1rem;">‹</button>
+        <button onclick="nextImg()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.8);border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:1rem;">›</button>
+        <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;">
+          ${imagenes.map((_, i) => `<span style="width:7px;height:7px;border-radius:50%;background:${i === currentImg ? '#fff' : 'rgba(255,255,255,0.5)'};display:inline-block;"></span>`).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+window.prevImg = function() { currentImg = (currentImg - 1 + imagenes.length) % imagenes.length; renderCarrusel(); }
+window.nextImg = function() { currentImg = (currentImg + 1) % imagenes.length; renderCarrusel(); }
+
+renderCarrusel();
 
   // Tallas
   selectedSize = '';
@@ -311,7 +310,7 @@ const nombreColores = {
   "#000000": "Negro",
   "#FFFFFF": "Blanco",
   "#808080": "Gris",
-  "#722F37": "Vino tinto",
+  "#80091B": "Vino tinto",
   "#800020": "Borgoña",
   "#1B2A4A": "Azul marino",
   "#4A5E3A": "Verde militar",
@@ -323,6 +322,7 @@ const nombreColores = {
   "#FFFFFF": "Blanco",
   "#4f030c": "Vino tinto profundo",
   "#e3cba5": "Camel",
+  "#311d08": "cafe",
   // ➕ agrega más si usas otros colores
 };
 
