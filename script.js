@@ -119,7 +119,7 @@ const productos = [
     colores: ["#e3cba5"],
     imagen: "img/body julieta.jpeg",
     imagenes: "",
-    badge: "Nuevo"
+    badge: "Agotado"
   },
 
 ]; 
