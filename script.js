@@ -1,6 +1,4 @@
-// ===================================================
-// ✏️ AQUÍ EDITAS TUS PRODUCTOS - solo toca esta parte
-// ===================================================
+
 const productos = [
   {
     nombre: "Croptop dalila",
@@ -11,7 +9,7 @@ const productos = [
     colores: ["#808080", "#000000", "#1B2A4A"],
     imagen: "img/Croptop dalila.jpeg",
     imagenes: "",
-    badge: "Nuevo"
+    badge: "Agotado"
   },
   {
     nombre: "Blusa reservada",
@@ -19,7 +17,7 @@ const productos = [
     precio: "$30.000",
     descripcion: "Blusa reservada, una blusa que combina con todo, y la puedes usar para cualquier ocasión.",
     tallas: ["Talla única"],
-    colores: ["#000000", "#1B2A4A", "#4A5E3A", "#87CEEB", "#FFFFFF"],
+    colores: ["#4A5E3A", "#000000"],
     imagen: "img/Blusa reservada.jpeg",
     imagenes: "",
     badge: "Nuevo"
@@ -33,7 +31,7 @@ const productos = [
     colores: ["#800020"],
     imagen: "img/Body.jpeg",
     imagenes: "",
-    badge: "Nuevo"
+    badge: "Agotado"
   },
   {
     nombre: "Croptop playero",
@@ -41,7 +39,7 @@ const productos = [
     precio: "$25.000",
     descripcion: "Croptop playero, preciso para un día que quieras salir de tu zona de confort.",
     tallas: ["Talla única"],
-    colores: ["#80091B"],
+    colores: ["#000000"],
     imagen: "img/Croptop playero.jpeg",
     imagenes: "",
     badge: "Nuevo"
@@ -52,7 +50,7 @@ const productos = [
     precio: "$33.000",
     descripcion: "Blusa ema, una blusa super elegante para ocasiones especiales. Enamórate de ella.",
     tallas: ["Talla única"],
-    colores: [],
+    colores: ["#F2ECE2"],
     imagen: "img/Blusa ema.jpeg",
     imagenes: "",
     badge: "Nuevo"
@@ -63,7 +61,7 @@ const productos = [
     precio: "$33.000",
     descripcion: "Body strapless, un body sencillo pero de alta calidad.",
     tallas: ["Talla única"],
-    colores: ["#311d08, #000000, #FFFFFF, #80091B"],
+    colores: ["#311d08, #FFFFFF, #80091B"],
     imagen: "img/Body strapless.jpeg",
     imagenes: ["img/Body strapless.jpeg", "img/Body strapless negro.jpeg", "img/Body strapless blanco.jpeg", "img/Body strapless vinotinto.jpeg"],
     badge: "Nuevo"
@@ -74,7 +72,7 @@ const productos = [
     precio: "$25.000",
     descripcion: "Blusa top paris, una pieza única para cualquier ocasión.",
     tallas: ["Talla única"],
-    colores: ["#FFFFFF, #000000"],
+    colores: ["#FFFFFF"],
     imagen: "img/Blusa top paris.jpeg",
     imagenes: ["img/Blusa top paris.jpeg", "img/Blusa top paris negra.jpeg"],
     badge: "Nuevo"
@@ -96,7 +94,7 @@ const productos = [
     precio: "$45.000",
     descripcion: "",
     tallas: ["Talla única "],
-    colores: ["#FFFFFF, #000000"],
+    colores: ["#FFFFFF"],
     imagen: "img/body maya manga larga .jpeg",
     imagenes: ["img/body maya manga larga .jpeg", "img/body maya manga larga negro.jpeg"],
     badge: "Nuevo"
@@ -125,9 +123,7 @@ const productos = [
   },
 
 ]; 
-// ===================================================
-// NO toques nada debajo de esta línea
-// ===================================================
+
 
 
 // Generar tarjetas
@@ -323,7 +319,7 @@ const nombreColores = {
   "#4f030c": "Vino tinto profundo",
   "#e3cba5": "Camel",
   "#311d08": "cafe",
-  // ➕ agrega más si usas otros colores
+  "#F2ECE2": "Blanco hueso",
 };
 
 function updateOrderLink(name, price, size, color) {
