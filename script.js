@@ -61,7 +61,7 @@ const productos = [
     precio: "$33.000",
     descripcion: "Body strapless, un body sencillo pero de alta calidad.",
     tallas: ["Talla única"],
-    colores: ["#311d08, #FFFFFF, #80091B"],
+    colores: ["#311d08, #000000, #FFFFFF, #80091B"],
     imagen: "img/Body strapless.jpeg",
     imagenes: ["img/Body strapless.jpeg", "img/Body strapless negro.jpeg", "img/Body strapless blanco.jpeg", "img/Body strapless vinotinto.jpeg"],
     badge: "Nuevo"
