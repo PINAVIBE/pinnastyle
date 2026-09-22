@@ -12,29 +12,29 @@ const productos = [
     badge: "Nuevo"
   },
   {
-    nombre: "Blusa reservada",
+    nombre: "Blusa De Brillitos",
     categoria: "blusas",
     precio: "$30.000",
-    descripcion: "Blusa reservada, una blusa que combina con todo, y la puedes usar para cualquier ocasión.",
+    descripcion: "",
     tallas: ["Talla única"],
     colores: ["#4A5E3A", "#000000"],
-    imagen: "",
-    imagenes: "",
+    imagen: "img/Blusa de Brillitos.jpeg",
+    imagenes: ["img/Blusa de Brillitos.jpeg"],
     badge: "Nuevo"
   },
   {
-    nombre: "Body maya",
-    categoria: "bodys",
+    nombre: "",
+    categoria: "",
     precio: "$45.000",
-    descripcion: "Un body que está a la altura de una chica como tú.",
+    descripcion: "",
     tallas: ["Talla única"],
     colores: ["#800020"],
     imagen: "",
-    imagenes: "",
+    imagenes: [""],
     badge: "Agotado"
   },
   {
-    nombre: "Croptop playero",
+    nombre: "",
     categoria: "croptops",
     precio: "$25.000",
     descripcion: "Croptop playero, preciso para un día que quieras salir de tu zona de confort.",
