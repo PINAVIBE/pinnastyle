@@ -1,15 +1,15 @@
 
 const productos = [
   {
-    nombre: "Croptop dalila",
-    categoria: "croptops",
-    precio: "$28.000",
-    descripcion: "Croptop dalila, una prenda espectacular si te gusta vestirte sencilla pero elegante.",
+    nombre: "Blusa Son",
+    categoria: "blusas",
+    precio: "$40.000",
+    descripcion: "",
     tallas: ["Talla única"],
-    colores: ["#808080", "#000000", "#1B2A4A"],
-    imagen: "img/Croptop dalila.jpeg",
-    imagenes: "",
-    badge: "Agotado"
+    colores: ["#FFFFFF", "#000000"],
+    imagen: "img/Blusa Son Blanca.jpeg",
+    imagenes: ["img/Blusa Son Blanca.jpeg", "img/Blusa Son negra.jpeg"],
+    badge: "Nuevo"
   },
   {
     nombre: "Blusa reservada",
@@ -18,7 +18,7 @@ const productos = [
     descripcion: "Blusa reservada, una blusa que combina con todo, y la puedes usar para cualquier ocasión.",
     tallas: ["Talla única"],
     colores: ["#4A5E3A", "#000000"],
-    imagen: "img/Blusa reservada.jpeg",
+    imagen: "",
     imagenes: "",
     badge: "Nuevo"
   },
@@ -29,7 +29,7 @@ const productos = [
     descripcion: "Un body que está a la altura de una chica como tú.",
     tallas: ["Talla única"],
     colores: ["#800020"],
-    imagen: "img/Body.jpeg",
+    imagen: "",
     imagenes: "",
     badge: "Agotado"
   },
@@ -40,7 +40,7 @@ const productos = [
     descripcion: "Croptop playero, preciso para un día que quieras salir de tu zona de confort.",
     tallas: ["Talla única"],
     colores: ["#000000"],
-    imagen: "img/Croptop playero.jpeg",
+    imagen: "",
     imagenes: "",
     badge: "Nuevo"
   },
@@ -51,7 +51,7 @@ const productos = [
     descripcion: "Blusa ema, una blusa super elegante para ocasiones especiales. Enamórate de ella.",
     tallas: ["Talla única"],
     colores: ["#F2ECE2"],
-    imagen: "img/Blusa ema.jpeg",
+    imagen: "",
     imagenes: "",
     badge: "Nuevo"
   },
@@ -62,8 +62,8 @@ const productos = [
     descripcion: "Body strapless, un body sencillo pero de alta calidad.",
     tallas: ["Talla única"],
     colores: ["#311d08, #000000, #FFFFFF, #80091B"],
-    imagen: "img/Body strapless.jpeg",
-    imagenes: ["img/Body strapless.jpeg", "img/Body strapless negro.jpeg", "img/Body strapless blanco.jpeg", "img/Body strapless vinotinto.jpeg"],
+    imagen: "",
+    imagenes: ["", "", "", ""],
     badge: "Nuevo"
   },
   {
@@ -73,8 +73,8 @@ const productos = [
     descripcion: "Blusa top paris, una pieza única para cualquier ocasión.",
     tallas: ["Talla única"],
     colores: ["#FFFFFF"],
-    imagen: "img/Blusa top paris.jpeg",
-    imagenes: ["img/Blusa top paris.jpeg", "img/Blusa top paris negra.jpeg"],
+    imagen: "",
+    imagenes: ["", ""],
     badge: "Nuevo"
   },
   {
@@ -84,7 +84,7 @@ const productos = [
     descripcion: "",
     tallas: ["Talla única"],
     colores: ["#000000, #4f030c"],
-    imagen: "img/body suzeh.jpeg",
+    imagen: "",
     imagenes: "",
     badge: "Nuevo"
   },
@@ -95,8 +95,8 @@ const productos = [
     descripcion: "",
     tallas: ["Talla única "],
     colores: ["#FFFFFF"],
-    imagen: "img/body maya manga larga .jpeg",
-    imagenes: ["img/body maya manga larga .jpeg", "img/body maya manga larga negro.jpeg"],
+    imagen: "",
+    imagenes: ["", ""],
     badge: "Nuevo"
   },
   {
@@ -106,8 +106,8 @@ const productos = [
     descripcion: "",
     tallas: ["Talla única "],
     colores: ["#000000, #FFFFFF"],
-    imagen: "img/Body manga larga.jpeg",
-    imagenes: ["img/Body manga larga.jpeg", "img/Body manga larga blanco.jpeg"],
+    imagen: "",
+    imagenes: ["", ""],
     badge: "Nuevo"
   },
   {
@@ -117,7 +117,7 @@ const productos = [
     descripcion: "",
     tallas: ["Talla única"],
     colores: ["#e3cba5"],
-    imagen: "img/body julieta.jpeg",
+    imagen: "",
     imagenes: "",
     badge: "Agotado"
   },
